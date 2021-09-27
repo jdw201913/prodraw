@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodraw - Workspace</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a715ab92c5.js" crossorigin="anonymous"></script>
+    <script data-ad-client="ca-pub-8836753630231460" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+    <header>
+              <div class="header_menu">Pen Size</div>
+              <div class="range">
+        <div class="field">
+                  <div class="value left">
+        1</div>
+        <input type="range" min="1" max="100" value="0" steps="0.1" oninput="draw_width = this.value">
+                  <div class="value right">
+        100</div>
+        </div>
+        </div>
+        <div class="header_menu">Color</div>
+        <div class="border"><input type="color" id="pen_color" oninput="draw_color = this.value"></div>
+    </header>
+        <div class="logo-details">
+            <div class="logo_name">Prodraw</div>
+            <i class='bx bx-menu' id="btn" ></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="#" onclick="download()">
+              <i class="fas fa-file-download" id="download" onclick="download()"></i>
+              <span class="links_name" onclick="download()">Download</span>
+            </a>
+             <span class="tooltip">Download</span>
+          </li>
+          <li>
+           <a href="#" onclick="window.location.reload(true);">
+            <i class="fas fa-eraser" onclick="window.location.reload(true);"></i>
+             <span class="links_name" onclick="window.location.reload(true);">Refresh</span>
+           </a>
+           <span class="tooltip">Refresh</span>
+         </li>
+         <li>
+           <a href="#" onclick="undo_last()">
+             <i class="fas fa-undo" onclick="undo_last()"></i>
+             <span class="links_name" onclick="undo_last()">Undo</span>
+           </a>
+           <span class="tooltip">Undo</span>
+         </li>
+         <li class="profile">
+             <div class="profile-details">
+               <img src="https://source.unsplash.com/random/40x40" alt="profileImg">
+               <div class="name_job">
+                 <div class="name">USER</div>
+               </div>
+             </div>
+             <i class='bx bx-user' id="exit" onclick="close_tab()"></i>
+         </li>
+        </ul>
+      </div>
+      <section class="home-section">
+        <canvas id="jsCanvas" class="canvas"></canvas>
+      </section>
+      <script src="index.js"></script>
+</body>
+</html>
